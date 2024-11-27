@@ -58,10 +58,10 @@ nav a {
 
 .project-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 0.6rem 20px;
     padding: 1rem;
     height: 90%;
+    grid-template-columns: 1fr;
 }
 
 #projects {
@@ -91,14 +91,19 @@ nav a {
     transition: transform 0.2s ease;
 }
 
+.project-card a {
+    height: 100%;
+    width: 100%;
+}
+
 .project-card img {
     width: 100%;
-    height: 80%;
-    height: fit-content;
+    height: calc(100% - 4rem);
 }
 
 .project-buttom {
     height: 40px;
+    margin: 1%;
     display: flex;
     justify-content: center;
     font-weight: lighter;
@@ -145,7 +150,6 @@ footer {
     color: #fff;
     text-align: center;
     padding: 2rem 0 0.1rem;
-    width: 100vw;
 }
 
 footer h3 {
@@ -183,19 +187,24 @@ footer ul {
     display: block;
 }
 
+.ul-2 i{
+    visibility: hidden;
+}
+
+
 footer li:hover {
     color: rgb(253, 94, 14);
 }
 
-b {
-    color: rgb(253, 94, 14);
-}
 
 .red-line {
     width: 100%;
     height: 2px;
     background-color: #a91e32;
 }
+
+
+/* -----------------------------------Ipad screen responsive codes----------------------------------- */
 
 
 @media (min-width: 768px) {
@@ -226,15 +235,144 @@ b {
     }
 
     .project-container {
-        gap: 30px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .project-card img {
+        object-fit: cover;
     }
 
     .projects-section-header {
-        color: #fff;
         padding: 1rem 1rem 0rem;
-        margin: 0 auto 1.2rem;
         font-size: xx-large;
+    }
+
+    .project-buttom {
+        font-size: x-large;
+    }
+
+    footer {
+        padding: 12rem 0 2.5rem;
+    }
+
+    .ul-1 {
+        font-size: 3.5rem;
+    }
+
+    .ul-2 i{
+        visibility: hidden;
+    }
+
+    footer h3{
+        font-size: xx-large;
+    }
+
+    footer p{
+        font-size: larger;
+        letter-spacing: 1px;
+        margin-bottom: 6rem;
+    }
+
+    .ul-2 span{
+        font-size:x-large;
+        letter-spacing: 1px;
+    }
+
+    .donjoy{
+        margin: 3rem auto 2rem;
+    }
+
+}
+
+
+
+/* -----------------------------------PC screen responsive codes----------------------------------- */
+
+
+
+
+@media (min-width: 1440px) {
+    #hero {
+        margin-top: 4%;
+    }
+
+    #hero h1 {
+        font-size: 3rem;
+        padding-top: 12.8%;
+    }
+
+    #hero p {
+        font-size: 1.3rem;
+        margin-bottom: 22rem;
+    }
+
+    .projects-section-header {
+        padding: 1rem 1rem 0rem;
+        font-size: xx-large;
+        width: 33%;
+    }
+
+    .project-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .footer-links {
+        display: flex;
+        margin-bottom: 3rem;
+    }
+
+    .ul-1 {
+        padding-left: 13%;
+        justify-content: center;
+        gap: 10rem;
+    }
+
+    .ul-1 span {
+        display: flex;
+        font-size: xx-large;
+    }
+
+    .ul-2 {
+        margin: 0;
+        padding: 2% 0 1% 0;
+        display: flex;
+        justify-content: center;
+        align-items: baseline;
+        font-size: 4rem;
+        gap: 7rem;
+
+    }
+
+    .ul-2 span{
+        font-size: xx-large;
+    }
+
+    .ul-2 a {
+        display: flex;
+        flex-direction: column;
+        justify-content: baseline;
+        gap: 1rem;
+    }
+
+    .ul-2 i{
+        visibility: visible;
+        font-size: 3rem;
+    }
+
+    footer {
+        padding: 15rem 0 2rem;
+    }
+
+    footer h3 {
+        font-size: 2.5rem;
+    }
+    
+    footer p {
+        font-size: 1rem;
+        margin: 1rem 0 1.6rem;
         font-weight: lighter;
-        border-bottom: 3px solid #fff;
+        line-height: 1.5px;
     }
 }
